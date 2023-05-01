@@ -1,0 +1,38 @@
+[
+    {
+        "title": "jabon",
+        "description": "jabon de uso corporal con fragacia a lavanda",
+        "price": 100,
+        "thumbnail": "https://www.google.com.ar/search?q=jabon+lavanda&tbm=isch&ved=2ahUKEwi3pei84Lj-AhU4r5UCHYwlCcYQ2-cCegQIABAA&oq=jabon+lavanda&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBggAEAUQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB46BAgjECc6BwgAEIoFEEM6CggAEIoFELEDEEM6CAgAEIAEELEDUMYCWPkZYJEgaABwAHgAgAFCiAGoBJIBATmYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=YVdBZPfwOLje1sQPjMuksAw&bih=937&biw=1920&hl=es-419#imgrc=wVqyxfGazoNNhM",
+        "code": "abc12",
+        "stock": 9,
+        "id": 1
+    },
+    {
+        "title": "leche",
+        "description": "leche de vaca larga vida",
+        "price": 100,
+        "thumbnail": "https://www.google.com.ar/search?q=leche&tbm=isch&ved=2ahUKEwisoIfE4Lj-AhVYkZUCHSmpDPwQ2-cCegQIABAA&oq=leche&gs_lcp=CgNpbWcQAzIECCMQJzIHCAAQigUQQzIHCAAQigUQQzIHCAAQigUQQzIKCAAQigUQsQMQQzIHCAAQigUQQzIICAAQgAQQsQMyBQgAEIAEMggIABCABBCxAzIICAAQgAQQsQM6BggAEAcQHjoGCAAQCBAeOgsIABCABBCxAxCDAVDiC1inEmDnFWgAcAB4AIAB0gKIAdsFkgEHNC4xLjAuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=cVdBZOyjB9ii1sQPqdKy4A8&bih=937&biw=1920&hl=es-419#imgrc=vbeNZboI89V4DM",
+        "code": "abc1234",
+        "stock": 5,
+        "id": 2
+    },
+    {
+        "title": "azucar",
+        "description": "azucar proveniente de caña de azucar de misines",
+        "price": 100,
+        "thumbnail": "https://www.google.com.ar/search?q=azucar&tbm=isch&ved=2ahUKEwj0p8a357j-AhWHNbkGHb-sBugQ2-cCegQIABAA&oq&gs_lcp=CgNpbWcQARgDMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnOgQIIxAnOgcIABCKBRBDOgoIABCKBRCxAxBDOggIABCABBCxAzoFCAAQgARQuwtYuwtgmzloAXAAeACAAT2IAT2SAQExmAEAoAEBqgELZ3dzLXdpei1pbWewAQrAAQE&sclient=img&ei=rV5BZLSdOYfr5OUPv9mawA4&bih=937&biw=1920&hl=es-419#imgrc=yhGLIGyWmaK1BM",
+        "code": "abc12345",
+        "stock": 20,
+        "id": 3
+    },
+    {
+        "title": "pan",
+        "description": "elaborado con harina de trigo",
+        "price": 130,
+        "thumbnail": "https://www.google.com.ar/search?q=azucar&tbm=isch&ved=2ahUKEwj0p8a357j-AhWHNbkGHb-sBugQ2-cCegQIABAA&oq&gs_lcp=CgNpbWcQARgDMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnMgcIIxDqAhAnOgQIIxAnOgcIABCKBRBDOgoIABCKBRCxAxBDOggIABCABBCxAzoFCAAQgARQuwtYuwtgmzloAXAAeACAAT2IAT2SAQExmAEAoAEBqgELZ3dzLXdpei1pbWewAQrAAQE&sclient=img&ei=rV5BZLSdOYfr5OUPv9mawA4&bih=937&biw=1920&hl=es-419#imgrc=yhGLIGyWmaK1BM",
+        "code": "abc123456",
+        "stock": 13,
+        "id": 4
+    }
+]
