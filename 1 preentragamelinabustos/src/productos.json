@@ -1,0 +1,67 @@
+[
+    {
+        "title": "jabon",
+        "description": "jabon de uso corporal con fragancia a lavanda",
+        "code": "abc14252",
+        "price": 305,
+        "status": true,
+        "stock": 201,
+        "category": "perfumeria",
+        "thumbnails": [
+            "https://www.google.com.ar/search?q=jabon+lavanda&tbm=isch&ved=2ahUKEwi3pei84Lj-AhU4r5UCHYwlCcYQ2-cCegQIABAA&oq=jabon+lavanda&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBggAEAUQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB46BAgjECc6BwgAEIoFEEM6CggAEIoFELEDEEM6CAgAEIAEELEDUMYCWPkZYJEgaABwAHgAgAFCiAGoBJIBATmYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=YVdBZPfwOLje1sQPjMuksAw&bih=937&biw=1920&hl=es-419#imgrc=wVqyxfGazoNNhM"
+        ],
+        "id": "95408023"
+    },
+    {
+        "title": "azucar",
+        "description": "azucar proveniente de caña de azucar",
+        "code": "abc122463",
+        "price": 150,
+        "status": true,
+        "stock": 20,
+        "category": "almacen",
+        "thumbnails": [
+            "https://www.cosemarozono.com/wp-content/uploads/2017/04/blanqueamiento-jarabe-azucar.jpg"
+        ],
+        "id": "49260822"
+    },
+    {
+        "title": "jabon liquido",
+        "description": "con aroma a lavanda",
+        "code": "abc12325",
+        "price": 20,
+        "status": true,
+        "stock": 20,
+        "category": "perfumeria",
+        "thumbnails": [
+            "https://cdn0.ecologiaverde.com/es/posts/2/2/7/como_hacer_jabon_liquido_casero_2722_orig.jpg"
+        ],
+        "id": "11846994"
+    },
+    {
+        "title": "leche",
+        "description": "leche de vaca larga vida",
+        "code": "abc12825",
+        "price": 310,
+        "status": true,
+        "stock": 50,
+        "category": "almacen",
+        "thumbnails": [
+            "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/219/229/products/leche-clasica1-3899720bbf9134703d16303300178303-640-0.webp"
+        ],
+        "id": "8524611"
+    },
+    {
+        "title": "pan",
+        "description": "elaborado con harina de trigo",
+        "code": "abc128675",
+        "price": 200,
+        "status": true,
+        "stock": 40,
+        "category": "almacen",
+        "thumbnails": [
+            "https://images.hola.com/imagenes/cocina/recetas/20191009151184/pan-de-leche/0-730-595/pan-leche-t.jpg?tx=w_680"
+        ],
+        "id": "66492847"
+    }
+]
