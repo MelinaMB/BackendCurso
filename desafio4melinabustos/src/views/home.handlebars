@@ -1,0 +1,17 @@
+{{!-- lista de todos los productos agregados --}}
+<h1>Lista de productos, no real time</h1>
+<div class="container">
+    {{#each products}}
+    <ul class="border">
+        <li>title: {{title}}</li>
+        <li>description: {{description}}</li>
+        <li>code: {{code}} </li>
+        <li>price: {{price}} </li>
+        <li>status: {{status}} </li>
+        <li>stock: {{stock}} </li>
+        <li>category: {{category}} </li>
+        <li>Thumbnails:<a href="{{thumbnails}}">{{thumbnails}}</a></li>
+        <li>id: {{id}} </li>
+    </ul>
+    {{/each}}
+</div>
