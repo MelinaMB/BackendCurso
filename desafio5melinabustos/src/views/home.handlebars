@@ -1,22 +1,28 @@
-
 <h1>Lista de productos</h1>
+<div>
+  <h2>Bienvenido</h2>
+  <h3>Nombre: {{user.firstName}}</h3>
+  <h3>Apellido: {{user.lastName}}</h3>
+  <h3>Mail: {{user.email}}</h3>
+</div>
+
 {{#each products}}
-  <ul>
-    <li>title: {{this.title}}</li>
-    <li>description: {{this.description}}</li>
-    <li>code: {{this.code}} </li>
-    <li>price: {{this.price}} </li>
-    <li>status: {{this.status}} </li>
-    <li>stock: {{this.stock}} </li>
-    <li>category: {{this.category}} </li>
-    <li>thumbnails: {{this.thumbnails}} </li>
-    <a href="/products/{{this._id}}">Detalle</a>
-    <br>
-    <button onclick="putIntoCart('{{this._id}}')">Agregar al Carrito</button>
-  </ul>
+<ul>
+  <li>title: {{this.title}}</li>
+  <li>description: {{this.description}}</li>
+  <li>code: {{this.code}} </li>
+  <li>price: {{this.price}} </li>
+  <li>status: {{this.status}} </li>
+  <li>stock: {{this.stock}} </li>
+  <li>category: {{this.category}} </li>
+  <li>thumbnails: {{this.thumbnails}} </li>
+  <a href="/products/{{this._id}}">Detalle</a>
+  <br>
+  <button onclick="putIntoCart('{{this._id}}')">Agregar al Carrito</button>
+</ul>
 {{/each}}
 {{#if paginate.hasPrevPage}}
-  <a href="/products?page= {{paginate.prevPage}}">{{paginate.prevPage}}</a>
+<a href="/products?page= {{paginate.prevPage}}">{{paginate.prevPage}}</a>
 {{/if}}
 <a> {{paginate.page}} </a>
 {{#if paginate.hasNextPage}}
@@ -24,7 +30,7 @@
 {{/if}}
 </br>
 
-{ 
+{
 status: "succes"
 totalDocs:{{paginate.totalDocs}}
 limit:{{paginate.limit}}

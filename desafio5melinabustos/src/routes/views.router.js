@@ -5,8 +5,8 @@ import { CartService } from "../services/carts.service.js";
 
 
 const productManager = new ProductManager();
-
 const cartService = new CartService()
+
 
 export const viewsRouter = express.Router();
 
@@ -43,8 +43,11 @@ viewsRouter.get('/products', async (req, res) => {
             thumbnails: doc.thumbnails
         }
     })
+    
     return res.render("home", { products, paginate: rest, });  
 });
+
+
 
 
 
