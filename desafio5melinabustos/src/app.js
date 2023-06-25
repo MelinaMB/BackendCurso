@@ -9,7 +9,7 @@ import handlebars from "express-handlebars";
 import session from "express-session";
 import MongoStore from 'connect-mongo';
 import { usersRouter } from './routes/users.router.js';
-import { authRouter } from './routes/auth.router.js'
+import { sessionRouter } from './routes/session.router.js'
 
 
 const app = express();
@@ -71,7 +71,7 @@ app.use("/api/carts", cartsRouter);
 app.use("/", viewsRouter);
 app.use("/test-chat", messagesRouter);
 app.use('/api/users', usersRouter);
-app.use('/auth', authRouter);
+app.use('/auth', sessionRouter);
 
 
 connectMongo();

@@ -3,9 +3,9 @@ import { UserModel } from '../DAO/models/users.model.js';
 // import { UserService } from '../services/users.service.js';
 import { isAdmin, isUser } from '../middlewares/auth.js';
 
-export const authRouter = express.Router();
+export const sessionRouter = express.Router();
 
-authRouter.get('/logout', (req, res) => {
+sessionRouter.get('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {
             return res.status(500).render('error', { error: 'no se pudo cerrar su session' });
@@ -14,20 +14,21 @@ authRouter.get('/logout', (req, res) => {
     });
 });
 
-authRouter.get('/perfil', isUser, (req, res) => {
+sessionRouter.get('/perfil', isUser, (req, res) => {
     const user = { email: req.session.email, isAdmin: req.session.isAdmin };
     return res.render('perfil', { user: user });
+    
 });
 
-authRouter.get('/administracion', isUser, isAdmin, (req, res) => {
+sessionRouter.get('/administracion', isUser, isAdmin, (req, res) => {
     return res.send('datos super secretos clasificados');
 });
 
-authRouter.get('/login', (req, res) => {
+sessionRouter.get('/login', (req, res) => {
     return res.render('login', {});
 });
 
-authRouter.post('/login', async (req, res) => {
+sessionRouter.post('/login', async (req, res) => {
     const { email, pass } = req.body;
     if (!email || !pass) {
         return res.status(400).render('error', { error: 'ponga su email y pass' });
@@ -43,11 +44,11 @@ authRouter.post('/login', async (req, res) => {
     }
 });
 
-authRouter.get('/register', (req, res) => {
+sessionRouter.get('/register', (req, res) => {
     return res.render('register', {});
 });
 
-authRouter.post('/register', async (req, res) => {
+sessionRouter.post('/register', async (req, res) => {
     const { email, pass, firstName, lastName } = req.body;
     if (!email || !pass || !firstName || !lastName) {
         return res.status(400).render('error', { error: 'ponga bien toooodoo cheee!!' });
@@ -57,14 +58,9 @@ authRouter.post('/register', async (req, res) => {
         req.session.email = email;
         req.session.isAdmin = false;
 
-        return res.redirect('/auth/perfil');
+        return res.redirect('/products');
     } catch (e) {
         console.log(e);
         return res.status(400).render('error', { error: 'no se pudo crear el usuario. Intente con otro mail.' });
     }
-});
-
-authRouter.get('/', (req, res) => {
-    const user = { email: req.session.email, firtsName: req.session.firstName, lastName: req.session.lastName };
-    return res.render('home', {user: user});
 });
