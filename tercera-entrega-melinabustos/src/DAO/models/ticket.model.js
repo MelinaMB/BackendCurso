@@ -3,15 +3,13 @@ import { Schema, model } from 'mongoose';
 
 const schema = new Schema({
   code: {
-    type: String,
+    type: Number,
     required: true,
-    max: 100,
     unique: true,
   },
   purchase_datetime: {
     type: Date,
     require: true,
-    max: 100,
   },
   amount: {
     type: Number,

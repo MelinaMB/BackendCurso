@@ -13,8 +13,7 @@ export class ProductsModels {
   }
 
   async getProductById(_id) {
-    const prod = await ProductModel.findOne({ _id: _id });
-    return prod;
+    return await ProductModel.findOne({ _id: _id });
   }
 
   async createOne(product) {

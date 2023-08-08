@@ -1,4 +1,4 @@
-class userDTO {
+export class userDTO {
     constructor(user) {
         this.name = user.firstName;
         this.lastName = user.lastName;
@@ -7,5 +7,3 @@ class userDTO {
         this.cartId = user.cart;
     }
 }
-
-module.export = userDTO;

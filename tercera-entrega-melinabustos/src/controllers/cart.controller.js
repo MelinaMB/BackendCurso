@@ -22,6 +22,15 @@ class CartController{
         }
     }
 
+    async getUserCart(req, res){
+        try {
+            const cartId = req.session.user.cart;
+            res.status(200).json({cart: cartId});
+        } catch (error) {
+            res.status(404).json({ message: "cart not found" });
+        }
+    }
+
     async getCartById(req, res){
         try {
             const idcart = req.params.cid;
@@ -114,12 +123,12 @@ class CartController{
         try {
             const cartId = req.params.cid;
             const userId = req.session.user._id;
-            const cartPurchase = await Service.generatePurchase(cartId, userId);
-            res.status(200).json({
-                success: true,
-                msg: "cart update",
-                data: cartPurchase, cartId
-              });
+            const ticket = await Service.generatePurchase(cartId, userId);
+            if (ticket) {
+                res.status(200).json({ticketId: ticket._id});
+            } else {
+                res.status(404).json({ message: "error" });
+            }
         } catch (error) {
             res.status(404).json({ message: error.message });
         }

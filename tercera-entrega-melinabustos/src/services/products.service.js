@@ -26,8 +26,7 @@ export class ProductService {
   }
 
   async getProductById(_id) {
-    const prod = await productsModels.getProductById(_id);
-    return prod;
+    return await productsModels.getProductById(_id);
   }
 
   async createOne(product) {

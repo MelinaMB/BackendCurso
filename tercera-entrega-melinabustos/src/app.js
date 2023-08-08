@@ -15,6 +15,8 @@ import { sessionsRouter } from "./routes/session.router.js";
 import { Command } from "commander";
 import config from "./config/config.js";
 import { userRouter } from "./routes/users.router.js";
+import {userDTO} from './DAO/DTO/user.dto.js'
+import { ticketRouter } from "./routes/ticket.router.js";
 
 console.log(config);
 
@@ -93,13 +95,15 @@ app.use(passport.session());
 // rutas
 app.use("/api/products", productsRouter);
 app.use("/api/cartView", cartViewRouter);
+app.use("/api/ticket", ticketRouter)
 app.use("/api/carts", cartsRouter);
 app.use("/", viewsRouter);
 app.use("/test-chat", messagesRouter);
 app.use('/api/user', userRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use("/api/session/current", (req, res) => {
-  return res.status(200).json({ user: req.session.user});
+  const informacionUser = new userDTO(req.session);
+   res.status(200).json({ user: informacionUser});
 });
 // ---------------------------------------
 

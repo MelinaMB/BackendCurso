@@ -30,7 +30,7 @@ export class UsersModels {
     return userUptaded;
   }
 
-  getUserByID = async (id) => {
+  async getUserById(id) {
     const user = await UserModel.findOne({ _id: id });
     return user;
   };

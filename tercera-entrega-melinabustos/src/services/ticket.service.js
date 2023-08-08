@@ -7,24 +7,29 @@ const userService = new UserService();
 const ticketDao = new TicketDao();
 
 export class TicketService {
-  async createOne(userId) {
-    const user = userService.getUserById(userId);
-
-    const total = products.reduce((suma, prod) => {
-      const product = productService.getProductById(prod.id);
-      return suma + product.price * product.quantity;
-    }, 0);
+  async createOne(prodWithStock, userId) {
+    const user = await userService.getUserById(userId);
+    let total = 0;
+    for (const item of prodWithStock) {
+      const product = await productService.getProductById(item.product.id);
+      total = total + product.price * item.quantity;
+    }
 
     const code = Math.floor(Math.random() * 10000 + 1);
 
     const ticketCreated = await ticketDao.createOne({
         code,
-        purchase_datetime: new Date.now(),
+        purchase_datetime: Date.now(),
         amount: total,
         purchaser: user.email
     });
     return ticketCreated;
     
   };
+
+  async getTicketById(id) {
+    const ticket = await ticketDao.getTicketById(id);
+    return ticket;
+  }
 }
 

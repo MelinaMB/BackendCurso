@@ -8,6 +8,8 @@ cartsRouter.post("/", cartController.createCart);
 
 cartsRouter.get("/", cartController.getAllCart);
 
+cartsRouter.get("/user", cartController.getUserCart);
+
 cartsRouter.get("/:cid", cartController.getCartById);
 
 cartsRouter.post("/:cid/product/:pid", isUser, cartController.postProdByIdInCart);
