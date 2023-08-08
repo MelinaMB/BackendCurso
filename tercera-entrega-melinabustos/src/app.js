@@ -102,7 +102,7 @@ app.use("/test-chat", messagesRouter);
 app.use('/api/user', userRouter);
 app.use('/api/sessions', sessionsRouter);
 app.use("/api/session/current", (req, res) => {
-  const informacionUser = new userDTO(req.session);
+  const informacionUser = new userDTO(req.session.user);
    res.status(200).json({ user: informacionUser});
 });
 // ---------------------------------------
