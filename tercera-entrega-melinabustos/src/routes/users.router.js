@@ -19,16 +19,16 @@ userRouter.get('/administracion', isUser, isAdmin, usersController.administracio
 // vista del login
 userRouter.get('/login', usersController.login);
 
-userRouter.post('/login', passport.authenticate('login', { failureRedirect: '/api/user/faillogin' }), usersController.loginAutenticate);
+userRouter.post('/login', passport.authenticate('login'/*, { failureRedirect: '/api/user/failLogin' }*/), usersController.loginAutenticate);
 
-userRouter.get('/faillogin', usersController.failLogin);
+// userRouter.get('/faillogin', usersController.failLogin);
 
 //   vista de regitro
 userRouter.get('/register', usersController.register);
 
-userRouter.post('/register', passport.authenticate('register', { failureRedirect: '/api/user/failregister' }), usersController.registerAutenticate);
+userRouter.post('/register', passport.authenticate('register'/*, { failureRedirect: '/api/user/failRegister' }*/), usersController.registerAutenticate);
 
-userRouter.get('/failregister', usersController.failLogin);
+// userRouter.get('/failregister', usersController.failLogin);
 
 userRouter.get('/session', usersController.session);
 

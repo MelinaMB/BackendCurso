@@ -1,3 +1,6 @@
+import CustomError from '../errors/custom-error.js';
+import EErros from '../errors/enums.js';
+import { generateUserErrorInfo } from '../errors/info.js';
 import UserService from '../services/users.service.js';
 
 const Service = new UserService();
@@ -34,45 +37,70 @@ class UsersController {
     return res.render('login', {});
   }
 
-  async loginAutenticate(req, res){
+  async loginAutenticate(req, res) {
     if (!req.user) {
-        return res.json({ error: 'invalid credentials' });
+      return res.json({ error: 'invalid credentials' });
     }
-    req.session.user = { 
-      _id: req.user._id, 
-      email: req.user.email, 
-      firstName: req.user.firstName, 
-      lastName: req.user.lastName, 
-      isAdmin: req.user.isAdmin, 
-      rol: req.user.rol, 
-      age: req.user.age, 
-      cart: req.user.cart};
-    
+    req.session.user = {
+      _id: req.user._id,
+      email: req.user.email,
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      isAdmin: req.user.isAdmin,
+      rol: req.user.rol,
+      age: req.user.age,
+      cart: req.user.cart,
+    };
+
     return res.redirect('/products');
   }
 
-  async failLogin(req, res) {
-    return res.json({ error: 'fail to login' });
-  }
+  // async failLogin(req, res) {
+  //   const error = CustomError.createError({
+  //     name: 'User creation error',
+  //     cause: generateUserErrorInfo(user),
+  //     message: 'Error trying to create user',
+  //     code: EErros.REGISTER_ERROR,
+  //   });
+  //   return res.json({ error: error });
+  // }
 
   async register(req, res) {
     return res.render('register', {});
   }
 
   async registerAutenticate(req, res) {
-    if (!req.user) {
-        return res.json({ error: 'something went wrong' });
+   req.session.user = {
+      _id: req.user._id,
+      email: req.user.email,
+      firstName: req.user.firstName,
+      lastName: req.user.lastName,
+      isAdmin: req.user.isAdmin,
+      rol: req.user.rol,
+      age: req.user.age,
+      cart: req.user.cart,
+    };
+
+    if (!req.user.first_name || !req.user.last_name || !req.user.email || !req.user.age) {
+     CustomError.createError({
+        name: "User creation error",
+      cause: 'error por falta de datos',
+      message: "Error trying to create user",
+      code: EErros.REGISTER_ERROR,
+      })
+      // return res.json({ error: 'something went wrong' });
     }
-    req.session.user = { _id: req.user._id, email: req.user.email, firstName: req.user.firstName, lastName: req.user.lastName, isAdmin: req.user.isAdmin, rol: req.user.rol, age: req.user.age, cart: req.user.cart };
+    
 
     return res.redirect('/products');
   }
 
   async failRegister(req, res) {
-    return res.json({ error: 'fail to register' });
+   
+    // return res.json({ error: 'fail to register' });
   }
 
-  async session(req, res){
+  async session(req, res) {
     return res.send(JSON.stringify(req.session));
   }
 }

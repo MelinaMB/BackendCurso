@@ -17,53 +17,12 @@ import config from "./config/config.js";
 import { userRouter } from "./routes/users.router.js";
 import {userDTO} from './DAO/DTO/user.dto.js'
 import { ticketRouter } from "./routes/ticket.router.js";
+import errorHandler from "./middlewares/error.js";
 
 console.log(config);
 
-// ---------uso libreria commander
-// const program = new Command();
-
-// program
-//   .option("-d", "Variables para debug", false)
-//   .option("-p <port>", "Puerdo del servicor", 8080)
-//   .option("--mode <mode>", "Modo de trabajo", "production")
-//   .requiredOption(
-//     "-u <user>",
-//     "User que usa el app",
-//     "No se ha declarado un user"
-//   )
-//   .option("-l, --letters [letters...]", "Especificar letras");
-
-// program.parse();
-
-// console.log("Options: ", program.opts());
-// console.log("Valor de mode: ", program.opts().mode);
-// console.log("Datos no reconocibles: ", program.args);
-
-
-// ---------comandos para saber cosas del proceso
-
-// console.log("ID del proceso: ", process.pid);
-// console.log("Argumentos del proceso:", process.argv);
-// console.log("Variables Enviroment: ", process.env)
-
-// ----------argumentos que le estoy pasando al proceso
-// console.log("Argumentos del proceso:", process.argv);
-// console.log("Argumentos del proceso:", process.argv.slice(2));
-// const puerto = process.argv[2];
-// console.log(puerto);
-
-
 const app = express();
 const port = 8080;
-
-const httpServer = app.listen(port, () => {
-  console.log(`Example app listening on http://localhost:${port}`)
-})
-
-connectMongo();
-connectSocket(httpServer);
-connectSocketChat(httpServer);
 
 // express
 app.use(express.json());
@@ -105,9 +64,19 @@ app.use("/api/session/current", (req, res) => {
   const informacionUser = new userDTO(req.session.user);
    res.status(200).json({ user: informacionUser});
 });
+app.use(errorHandler);
+
+
+// Error handling Middleware function reads the error message 
+// and sends back a response in JSON format
+// const errorResponder = (error, request, response, next) => {
+//   response.header("Content-Type", 'application/json')
+    
+//   const status = error.status || 400
+//   response.status(status).send(error.message)
+// }
+
 // ---------------------------------------
-
-
 
 app.get('/', (req, res) => {
   return res.status(404).json({
@@ -117,4 +86,10 @@ app.get('/', (req, res) => {
   });
 });
 
+const httpServer = app.listen(port, () => {
+  console.log(`Example app listening on http://localhost:${port}`)
+})
 
+connectMongo();
+connectSocket(httpServer);
+connectSocketChat(httpServer);
