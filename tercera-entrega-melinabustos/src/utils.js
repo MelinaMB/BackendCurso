@@ -70,3 +70,18 @@ export function connectSocketChat(httpServer) {
 import bcrypt from 'bcrypt';
 export const createHash = (password) => bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 export const isValidPassword = (password, hashPassword) => bcrypt.compareSync(password, hashPassword);
+
+// -------------------------------------faker-----------------
+import { faker } from "@faker-js/faker/locale/es";
+
+export const generateProduct = () => {
+  return {
+    title: faker.commerce.productName(),
+    price: faker.commerce.price(),
+    description: faker.commerce.productDescription(),
+    id: faker.database.mongodbObjectId(),
+    thumbnails: faker.image.url(),
+    code: faker.database.mongodbObjectId(),
+    category: faker.commerce.department(),
+  };
+};

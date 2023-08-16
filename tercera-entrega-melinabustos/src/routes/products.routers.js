@@ -15,5 +15,6 @@ productsRouter.post('/', isAdmin, productsController.createOne);
 productsRouter.put('/:pid', isAdmin, productsController.updateOne);
 
 productsRouter.delete('/:pid', productsController.delete);
-
 // falta al delete poner isAdmin
+
+productsRouter.get('/products/mockingproducts', productsController.mocking);

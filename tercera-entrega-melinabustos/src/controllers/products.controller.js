@@ -1,6 +1,7 @@
+import { ProductService } from '../services/products.service.js';
+import { generateProduct } from '../utils.js';
 import CustomError from '../errors/custom-error.js';
 import EErros from '../errors/enums.js';
-import { ProductService } from '../services/products.service.js';
 
 const Service = new ProductService();
 
@@ -63,11 +64,20 @@ class ProductsController {
     try {
       const product = req.body;
       const prodCreated = await Service.createOne(product);
-      return res.status(201).json({
-        status: 'success',
-        msg: 'product created',
-        data: prodCreated,
-      });
+      if (!prodCreated){
+        CustomError.createError({
+          name: 'Product not created',
+          cause: 'Error trying to created a product because of field missing',
+          message: 'product was not found',
+          code: EErros.PRODUCT_ERROR,
+        });
+      } else {
+        return res.status(201).json({
+          status: 'success',
+          msg: 'product created',
+          data: prodCreated,
+        });
+      }
     } catch (error) {
       console.log(error);
       res.status(400).json({
@@ -108,23 +118,39 @@ class ProductsController {
   //       }
   // }
 
-  async delete(req, res) {
-    const productId = req.params.pid;
-    const prod = await Service.getProductById(productId);
-    if (!prod) {
-      CustomError.createError({
-        name: 'ProductId not found',
-        cause: 'Error trying to delete product because product was not found',
-        message: 'product was not found',
-        code: EErros.PRODUCT_ERROR,
-      });
-    } else {
-      const proddeleted = await Service.deleteOne(productId);
+  async delete(req, res, next) {
+    try {
+      const productId = req.params.pid;
+      const prod = await Service.getProductById(productId);
+      if (!prod) {
+        CustomError.createError({
+          name: 'ProductId not found',
+          cause: 'Error trying to delete product because product was not found',
+          message: 'product was not found',
+          code: EErros.PRODUCT_ERROR,
+        });
+      } else {
+        const proddeleted = await Service.deleteOne(productId);
+        return res.status(200).json({
+          status: 'success',
+          masg: 'producto borrado',
+          data: proddeleted,
+        });
+      }
+    } catch(error) {
+      next(error);
+    }
+  }
+
+  async mocking(req, res) {
+    const products = [];
+
+    for (let i = 0; i < 100; i++) {
+      products.push(generateProduct());
     }
     return res.status(200).json({
       status: 'success',
-      masg: 'producto borrado',
-      data: proddeleted,
+      data: products,
     });
   }
 }
