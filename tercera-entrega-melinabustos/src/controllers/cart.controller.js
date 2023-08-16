@@ -1,3 +1,5 @@
+import CustomError from '../errors/custom-error.js';
+import EErros from '../errors/enums.js';
 import { CartService } from '../services/carts.service.js'
 
 const Service = new CartService();
@@ -41,19 +43,28 @@ class CartController{
         }
     }
 
-    async postProdByIdInCart(req, res){
+    async postProdByIdInCart(req, res, next){
         try {
             const idproduct = req.params.pid;
             const idcart = req.params.cid;
             const cart = await Service.postProdInCart(idcart, idproduct);
-            res.status(200).json({
-                status: "success",
-                masg: "producto agregado",
-                data: cart, idcart,
-            });
-    
+            if(!cart){
+                CustomError.createError({
+                    name: 'Product was not added in cart',
+                    cause: 'Error trying to add product in cart because idcart not found or idproduct not found',
+                    message: 'product not add in cart',
+                    code: EErros.PRODUCT_IN_CART_ERROR,
+                  });
+            } else {
+                res.status(200).json({
+                    status: "success",
+                    masg: "producto agregado",
+                    data: cart, idcart,
+                });
+            }
         } catch (error) {
-            res.status(404).json({ message: error.message });
+            next(error);
+            // res.status(404).json({ message: error.message });
         }
     }
 

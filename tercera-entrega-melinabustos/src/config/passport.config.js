@@ -53,7 +53,7 @@ export function iniPassport() {
             lastName,
             isAdmin: false,
             password: createHash(password),
-            age: Number(age),
+            age: Number !=0,
             rol: "user",
             cart: cartID,
           };

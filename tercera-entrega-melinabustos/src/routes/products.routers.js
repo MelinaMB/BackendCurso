@@ -10,9 +10,11 @@ productsRouter.get('/', productsController.getProductLimit);
 
 productsRouter.get('/:pid', productsController.getProductById);
 
-productsRouter.post('/', isAdmin, productsController.createOne);
+productsRouter.post('/', productsController.createOne);
+// falta al createOne poner isAdmin
 
-productsRouter.put('/:pid', isAdmin, productsController.updateOne);
+productsRouter.put('/:pid', productsController.updateOne);
+// falta al updateOne poner isAdmin
 
 productsRouter.delete('/:pid', productsController.delete);
 // falta al delete poner isAdmin

@@ -6,6 +6,7 @@ import EErros from '../errors/enums.js';
 const Service = new ProductService();
 
 class ProductsController {
+  
   async getAll(req, res) {
     try {
       const products = await Service.getAll();
@@ -60,18 +61,19 @@ class ProductsController {
     }
   }
 
-  async createOne(req, res) {
+  async createOne(req, res, next) {
     try {
       const product = req.body;
-      const prodCreated = await Service.createOne(product);
-      if (!prodCreated){
+
+      if (!product.title ||  !product.description ||  !product.price ||  !product.code ||  !product.stock ||  !product.status || !product.category) {
         CustomError.createError({
           name: 'Product not created',
           cause: 'Error trying to created a product because of field missing',
-          message: 'product was not found',
+          message: 'product was not created',
           code: EErros.PRODUCT_ERROR,
         });
       } else {
+        const prodCreated = await Service.createOne(product);
         return res.status(201).json({
           status: 'success',
           msg: 'product created',
@@ -79,18 +81,22 @@ class ProductsController {
         });
       }
     } catch (error) {
-      console.log(error);
-      res.status(400).json({
-        message: 'error',
-        data: {},
-      });
+      next(error);
     }
   }
 
-  async updateOne(req, res) {
+  async updateOne(req, res, next) {
     try {
       const id = req.params.pid;
       const upDate = req.body;
+      if (!upDate.title ||  !upDate.description ||  !upDate.price ||  !upDate.code ||  !upDate.stock ||  !upDate.status || !upDate.category || !id){
+        CustomError.createError({
+          name: 'Product not updated',
+          cause: 'Error trying to update a product because of field missing',
+          message: 'product was not update',
+          code: EErros.PRODUCT_ERROR,
+        });
+      }
       const prodUpdate = await Service.updateOne(id, upDate);
       return res.status(200).json({
         status: 'success',
@@ -98,8 +104,7 @@ class ProductsController {
         data: prodUpdate,
       });
     } catch (error) {
-      console.log(error);
-      res.status(400).json({ message: error.message });
+      next(error);
     }
   }
 
@@ -137,7 +142,7 @@ class ProductsController {
           data: proddeleted,
         });
       }
-    } catch(error) {
+    } catch (error) {
       next(error);
     }
   }

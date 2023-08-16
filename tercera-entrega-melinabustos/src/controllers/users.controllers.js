@@ -69,34 +69,36 @@ class UsersController {
     return res.render('register', {});
   }
 
-  async registerAutenticate(req, res) {
-   req.session.user = {
-      _id: req.user._id,
-      email: req.user.email,
-      firstName: req.user.firstName,
-      lastName: req.user.lastName,
-      isAdmin: req.user.isAdmin,
-      rol: req.user.rol,
-      age: req.user.age,
-      cart: req.user.cart,
-    };
+  async registerAutenticate(req, res, next) {
+    try {
+      req.session.user = {
+        _id: req.user._id,
+        email: req.user.email,
+        firstName: req.user.firstName,
+        lastName: req.user.lastName,
+        isAdmin: req.user.isAdmin,
+        rol: req.user.rol,
+        age: req.user.age,
+        cart: req.user.cart,
+      };
 
-    if (!req.user.first_name || !req.user.last_name || !req.user.email || !req.user.age) {
-     CustomError.createError({
-        name: "User creation error",
-      cause: 'error por falta de datos',
-      message: "Error trying to create user",
-      code: EErros.REGISTER_ERROR,
-      })
-      // return res.json({ error: 'something went wrong' });
+      if (!req.user.firstName || !req.user.lastName || !req.user.email || !req.user.age != 0) {
+        CustomError.createError({
+          name: 'User creation error',
+          cause: 'error por falta de datos',
+          message: 'Error trying to create user',
+          code: EErros.REGISTER_ERROR,
+        });
+        // return res.json({ error: 'something went wrong' });
+      } else {
+        return res.redirect('/products');
+      }
+    } catch (error) {
+      next(error);
     }
-    
-
-    return res.redirect('/products');
   }
 
   async failRegister(req, res) {
-   
     // return res.json({ error: 'fail to register' });
   }
 
