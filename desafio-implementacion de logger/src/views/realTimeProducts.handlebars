@@ -1,0 +1,24 @@
+{{!-- productos en real time --}}
+<div>
+    listo para trabajar con socket 
+</div>
+<h1>Lista de productos real time</h1>
+
+{{#each products}}
+<ul>
+    <li>title: {{title}}</li>
+    <li>description: {{description}}</li>
+    <li>code: {{code}} </li>
+    <li>price: {{price}} </li>
+    <li>status: {{status}} </li>
+    <li>stock: {{stock}} </li>
+    <li>category: {{category}} </li>
+    <li>thumbnails: {{thumbnails}} </li>
+    <li>id: {{id}} </li>
+</ul>
+{{/each}}
+
+{{!-- instancia de socket del cliente --}}
+<script src="/socket.io/socket.io.js"></script>
+{{!-- script propio --}}
+<script src="/js/index.js"></script>
