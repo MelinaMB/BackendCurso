@@ -59,6 +59,9 @@ class ViewsControllers {
         const cart = await Service.getCartById(cid);
         res.render("carts", { cart: simplifiedCart });
       } catch (error) {
+        req.logger.error({
+          message: error.message,
+        });
         next(error);
       }
   }
@@ -69,7 +72,11 @@ class ViewsControllers {
         const productSimplificado = await Service.getProductById(pid);
         res.render("product", { product: productSimplificado });
       } catch (error) {
+        req.logger.error({
+          message: error.message,
+        });
         next(error);
+
       }
   }
 

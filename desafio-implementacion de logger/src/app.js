@@ -18,11 +18,32 @@ import { userRouter } from "./routes/users.router.js";
 import {userDTO} from './DAO/DTO/user.dto.js'
 import { ticketRouter } from "./routes/ticket.router.js";
 import errorHandler from "./middlewares/error.js";
+import { addLogger } from "./utils/logger.js";
+
 
 console.log(config);
 
 const app = express();
-const port = 8080;
+const port = config.port || 8080;
+
+app.use(addLogger);
+app.get("/loggerTest", (req, res) => {
+  try {
+    req.logger.debug(' mensaje de debug.');
+    req.logger.http(' mensaje HTTP.');
+    req.logger.info(' mensaje de información.');
+    req.logger.warn(' mensaje de advertencia.');
+    req.logger.error(' mensaje de error.');
+    req.logger.fatal('mensaje fatal');
+
+    res.status(200).json({ status: 'success', msg: 'mensajes de logger' });
+  } catch (error) {
+    req.logger.error(error);
+    res.status(404).json({ message: "no mensajes de logger" });
+  }
+});
+
+
 
 // express
 app.use(express.json());

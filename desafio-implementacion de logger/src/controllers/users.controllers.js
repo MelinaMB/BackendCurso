@@ -94,6 +94,9 @@ class UsersController {
         return res.redirect('/products');
       }
     } catch (error) {
+      req.logger.warn({
+        message: error.message,
+      });
       next(error);
     }
   }

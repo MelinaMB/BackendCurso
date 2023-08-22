@@ -21,6 +21,9 @@ class ProductsController {
         message: 'error',
         data: {},
       });
+      req.logger.warn({
+        message: error.message,
+      });
     }
   }
 
@@ -41,6 +44,9 @@ class ProductsController {
         message: 'error',
         data: {},
       });
+      req.logger.warn({
+        message: error.message,
+      });
     }
   }
 
@@ -57,6 +63,9 @@ class ProductsController {
       res.status(400).json({
         message: 'error',
         data: {},
+      });
+      req.logger.warn({
+        message: error.message,
       });
     }
   }
@@ -81,7 +90,11 @@ class ProductsController {
         });
       }
     } catch (error) {
+      req.logger.warn({
+        message: error.message,
+      });
       next(error);
+    
     }
   }
 
@@ -104,24 +117,12 @@ class ProductsController {
         data: prodUpdate,
       });
     } catch (error) {
+      req.logger.warn({
+        message: error.message,
+      });
       next(error);
     }
   }
-
-  // async delete(req, res){
-  //     try {
-  //         const productId = req.params.pid;
-  //         const proddeleted = await Service.deleteOne(productId);
-  //         return res.status(200).json({
-  //           status: 'success',
-  //           masg: 'producto borrado',
-  //           data: proddeleted,
-  //         });
-  //       } catch (error) {
-  //         console.log(error);
-  //         res.status(400).json({ message: error.message });
-  //       }
-  // }
 
   async delete(req, res, next) {
     try {
@@ -143,6 +144,9 @@ class ProductsController {
         });
       }
     } catch (error) {
+      req.logger.warn({
+        message: error.message,
+      });
       next(error);
     }
   }
