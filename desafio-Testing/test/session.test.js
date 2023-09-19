@@ -40,7 +40,7 @@ const requester = supertest('http://127.0.0.1:8080');
     });
 
     it('Enviar cookie para ver el contenido del user', async () => {
-      const { _body } = await requester.get('/api/sessions/current').set('Cookie', [`${cookieName}=${cookieValue}`]);
-      expect(_body.payload.email).to.be.eql(mockUser.email);
+      const resultado = await requester.get('/api/sessions/current').set('Cookie', [`${cookieName}=${cookieValue}`]);
+      expect(resultado.body).to.have.property('email').to.be.eql(mockUser.email);
     });
   }); 
