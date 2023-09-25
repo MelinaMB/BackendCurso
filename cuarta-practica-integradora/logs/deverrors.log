@@ -1,0 +1,151 @@
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":"Este es un mensaje de información."}[39m
+[33m{"level":"warn","message":"Este es un mensaje de advertencia."}[39m
+[31m{"level":"error","message":"Este es un mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[31m{"level":"error"}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[32m{"level":"info","message":" mensaje de información."}[39m
+[33m{"level":"warn","message":" mensaje de advertencia."}[39m
+[31m{"level":"error","message":" mensaje de error."}[39m
+[33m{"level":"warn","message":"Cast to ObjectId failed for value \"5020537\" (type string) at path \"_id\" for model \"products\""}[39m
+[33m{"level":"warn","message":"product was not created"}[39m
+[32m{"level":"info","message":"Cannot read properties of undefined (reading 'cart')"}[39m
+[33m{"level":"warn","message":"Parameter \"obj\" to Document() must be an object, got \"http://localhost:8080/api/products/aceituna.jfif\" (type string)"}[39m
+[33m{"level":"warn","message":"Parameter \"obj\" to Document() must be an object, got \"aceituna.jfif\" (type string)"}[39m
+[33m{"level":"warn","message":"products validation failed: category: Path `category` is required., stock: Path `stock` is required., status: Path `status` is required., price: Path `price` is required., code: Path `code` is required., description: Path `description` is required., title: Path `title` is required."}[39m
+[33m{"level":"warn","message":"products validation failed: category: Path `category` is required., stock: Path `stock` is required., status: Path `status` is required., price: Path `price` is required., code: Path `code` is required., description: Path `description` is required., title: Path `title` is required."}[39m
+[31m{"level":"error","message":"req is not defined"}[39m
+[31m{"level":"error","message":"req is not defined"}[39m
+[31m{"level":"error","message":"req is not defined"}[39m
+[31m{"level":"error","message":"req is not defined"}[39m
+[31m{"level":"error","message":"req is not defined"}[39m
+[33m{"level":"warn","message":"E11000 duplicate key error collection: ecommerce.products index: code_1 dup key: { code: \"abc123167\" }"}[39m
+[31m{"level":"error","message":"req is not defined"}[39m
+[31m{"level":"error","message":"req is not defined"}[39m
+[31m{"level":"error","message":"req is not defined"}[39m
+[33m{"level":"warn","message":"Cast to ObjectId failed for value \"{cid}\" (type string) at path \"_id\" for model \"carts\""}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"E11000 duplicate key error collection: ecommerce.products index: code_1 dup key: { code: \"abc234113884\" }"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[33m{"level":"warn","message":"Cannot read properties of undefined (reading 'filename')"}[39m
+[32m{"level":"info","message":"hjjjhj is not defined"}[39m
